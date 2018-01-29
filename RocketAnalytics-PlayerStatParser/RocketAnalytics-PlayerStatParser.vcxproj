@@ -77,6 +77,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)RocketAnalytics-PlayerStatParser\include;$(SolutionDir)RocketAnalytics-PlayerStatParser\lib\RocketAnalyticsLib\include\properties;$(SolutionDir)RocketAnalytics-PlayerStatParser\lib\RocketAnalyticsLib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
