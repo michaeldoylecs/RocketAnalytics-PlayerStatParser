@@ -76,6 +76,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)RocketAnalytics-PlayerStatParser\include;$(SolutionDir)RocketAnalytics-PlayerStatParser\lib\RocketAnalyticsLib\include\properties;$(SolutionDir)RocketAnalytics-PlayerStatParser\lib\RocketAnalyticsLib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -115,6 +116,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\Player.hpp" />
+    <ClInclude Include="lib\RocketAnalyticsLib\include\BinaryReader.hpp" />
+    <ClInclude Include="lib\RocketAnalyticsLib\include\Byte.hpp" />
+    <ClInclude Include="lib\RocketAnalyticsLib\include\properties\ByteValue.hpp" />
+    <ClInclude Include="lib\RocketAnalyticsLib\include\properties\Property.hpp" />
+    <ClInclude Include="lib\RocketAnalyticsLib\include\properties\PropertyType.hpp" />
+    <ClInclude Include="lib\RocketAnalyticsLib\include\properties\PropertyValue.hpp" />
+    <ClInclude Include="lib\RocketAnalyticsLib\include\ReplayFile.hpp" />
+    <ClInclude Include="lib\RocketAnalyticsLib\include\ReplayFileReader.hpp" />
+    <ClInclude Include="lib\RocketAnalyticsLib\include\ReplayHeader.hpp" />
+    <ClInclude Include="lib\RocketAnalyticsLib\include\ReplayLevels.hpp" />
+    <ClInclude Include="lib\RocketAnalyticsLib\include\Version.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="lib\RocketAnalyticsLib\src\BinaryReader.cpp" />
+    <ClCompile Include="lib\RocketAnalyticsLib\src\Byte.cpp" />
+    <ClCompile Include="lib\RocketAnalyticsLib\src\properties\ByteValue.cpp" />
+    <ClCompile Include="lib\RocketAnalyticsLib\src\properties\Property.cpp" />
+    <ClCompile Include="lib\RocketAnalyticsLib\src\properties\PropertyType.cpp" />
+    <ClCompile Include="lib\RocketAnalyticsLib\src\properties\PropertyValue.cpp" />
+    <ClCompile Include="lib\RocketAnalyticsLib\src\ReplayFile.cpp" />
+    <ClCompile Include="lib\RocketAnalyticsLib\src\ReplayFileReader.cpp" />
+    <ClCompile Include="lib\RocketAnalyticsLib\src\ReplayHeader.cpp" />
+    <ClCompile Include="lib\RocketAnalyticsLib\src\ReplayLevels.cpp" />
+    <ClCompile Include="lib\RocketAnalyticsLib\src\Version.cpp" />
+    <ClCompile Include="src\Player.cpp" />
+    <ClCompile Include="src\RocketAnalyticsPlayerStatParser.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
