@@ -30,6 +30,7 @@ namespace PlayerStatParser {
 		platform = properties.at(1).get_value_as_string();
 		onlineID = properties.at(2).get_value_as_string();
 		team = stoi(properties.at(3).get_value_as_string());
+		mvp = 0;
 		score = stoi(properties.at(4).get_value_as_string());
 		goals = stoi(properties.at(5).get_value_as_string());
 		assists = stoi(properties.at(6).get_value_as_string());
