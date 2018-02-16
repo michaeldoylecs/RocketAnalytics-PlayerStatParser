@@ -73,8 +73,7 @@ int main() {
 		vector<Property> replay_properties = 
 			replay.get_header().get_properties();
 
-		vector<vector<Property>> player_stats = 
-			get_player_stats(replay_properties);
+		vector<vector<Property>> player_stats = get_stats(replay_properties);
 
 		for (auto player_info : player_stats) {
 			Player player(player_info);
@@ -102,7 +101,7 @@ int main() {
 	return 0;
 }
 
-vector<vector<Property>> get_player_stats(vector<Property> properties) {
+vector<vector<Property>> get_stats(vector<Property> properties) {
 	vector<vector<Property>> stats;
 	for (Property prop : properties) {
 		if (prop.get_name() == "PlayerStats") {
