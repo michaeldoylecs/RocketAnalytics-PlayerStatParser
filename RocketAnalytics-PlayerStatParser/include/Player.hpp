@@ -6,8 +6,11 @@
 #define PLAYER_H
 
 #include <string>
+#include "Property.hpp"
 
+using ReplayParser::Property;
 using std::string;
+using std::vector;
 
 namespace PlayerStatParser {
 
@@ -26,6 +29,7 @@ namespace PlayerStatParser {
 		int games;
 
 		Player();
+		Player(vector<Property> properties);
 
 		Player& operator+=(const Player& player);
 	};
