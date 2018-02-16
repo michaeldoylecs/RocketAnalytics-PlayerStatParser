@@ -17,6 +17,7 @@ namespace PlayerStatParser {
 		string platform;
 		string onlineID;
 		int team;
+		int mvp;
 		int score;
 		int goals;
 		int assists;
@@ -25,6 +26,8 @@ namespace PlayerStatParser {
 		int games;
 
 		Player();
+
+		Player& operator+=(const Player& player);
 	};
 
 }

@@ -96,6 +96,9 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)RocketAnalytics-PlayerStatParser\include;$(SolutionDir)RocketAnalytics-PlayerStatParser\lib\RocketAnalyticsLib\include\properties;$(SolutionDir)RocketAnalytics-PlayerStatParser\lib\RocketAnalyticsLib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
