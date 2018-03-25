@@ -91,7 +91,6 @@ int main() {
 				players[player.onlineID] = player;
 			}
 		}
-		cout << highest_score_player.name << ": " << highest_score_player.mvp << "\n";
 		players[highest_score_player.onlineID].mvp += 1;
 	}
 
