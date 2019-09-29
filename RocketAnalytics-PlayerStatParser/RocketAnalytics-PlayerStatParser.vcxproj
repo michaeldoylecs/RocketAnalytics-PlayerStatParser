@@ -69,7 +69,10 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>E:\Library\Development\RocketAnalytics-PlayerStatParser\RocketAnalytics-PlayerStatParser\lib\RocketAnalyticsLib\include\properties;E:\Library\Development\RocketAnalytics-PlayerStatParser\RocketAnalytics-PlayerStatParser\lib\RocketAnalyticsLib\include;E:\Library\Development\RocketAnalytics-PlayerStatParser\RocketAnalytics-PlayerStatParser\include;$(IncludePath)</IncludePath>
+    <SourcePath>E:\Library\Development\RocketAnalytics-PlayerStatParser\RocketAnalytics-PlayerStatParser\lib\RocketAnalyticsLib\src\properties;E:\Library\Development\RocketAnalytics-PlayerStatParser\RocketAnalytics-PlayerStatParser\src;E:\Library\Development\RocketAnalytics-PlayerStatParser\RocketAnalytics-PlayerStatParser\lib\RocketAnalyticsLib\src;$(SourcePath)</SourcePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -86,6 +89,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
