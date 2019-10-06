@@ -7,7 +7,6 @@ extern crate serde_derive;
 
 use boxcars::{ParseError, Replay, HeaderProp};
 
-use std::env;
 use std::error;
 use std::fs;
 use std::io::{stdin, Read, Error, ErrorKind};
@@ -146,8 +145,8 @@ fn get_player_stats_property(replay: &Replay) -> Result<HeaderProp, String> {
 }
 
 fn get_winning_team(replay: &Replay) -> Result<i32, String> {
-    let mut team_0_score: i32 = -1;
-    let mut team_1_score: i32 = -1;
+    let mut team_0_score: i32 = 0;
+    let mut team_1_score: i32 = 0;
     for prop in &replay.properties {
         match prop.0.as_ref() {
             "Team0Score" => if let HeaderProp::Int(v) = prop.1 { team_0_score = v },
@@ -155,11 +154,6 @@ fn get_winning_team(replay: &Replay) -> Result<i32, String> {
             _            => (),
         }
     }
-    
-    if team_0_score == -1 || team_1_score == -1 {
-        return Err("Team score failed to be found".to_string());
-    }
-
     return if team_0_score < team_1_score { Ok(1) } else { Ok(0) }
 }
 
@@ -205,8 +199,6 @@ fn write_csv(stats: Vec<PlayerStats>, output: PathBuf) -> Result<(), Box<dyn err
 }
 
 fn run() -> Result<(), Box<dyn error::Error>> {
-    let args: Vec<String> = env::args().collect();
-    println!("{:?}", args);
     let input_path: PathBuf = read_path_input("What is the path to the replay file directory")?;
     let mut output_path: PathBuf = read_path_input("What is the path to the output directory")?;
     
@@ -223,6 +215,9 @@ fn run() -> Result<(), Box<dyn error::Error>> {
         let stats = get_stats_from_player_stats(player_stats_prop, winning_team);
         for stat in stats.iter() {
             all_stats.push(stat.clone());
+        }
+        for _ in 0..(6 - stats.len()) {
+            all_stats.push(PlayerStats::default());
         }
         println!(
             "Done reading {}",
